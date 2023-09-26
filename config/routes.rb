@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   get("/dice/50/6", {:controller => "dicerolls", :action => "fiftysix"})
 
-  get("/dice/:number/6", {:controller => "dicerolls", :action => "fiftysix"})
+  get("/dice/:quantity/:value", {:controller => "dicerolls", :action => "any"})
 end

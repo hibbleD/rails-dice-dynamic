@@ -53,4 +53,20 @@ class DicerollsController < ApplicationController
 
       render("/dice_templates/fiftysix")
   end
+
+  def any
+
+    @rolls = []
+
+    @quantity = params.fetch("quantity").to_i
+
+    @value = params.fetch("value").to_i
+
+    @quantity.times do
+      @die = rand(1..@value)
+      @rolls.push(@die)
+  end
+
+  render("/dice_templates/any")
+  end
 end
